@@ -1,4 +1,5 @@
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Sanchez|Fjalla+One' rel='stylesheet' type='text/css'>
   <title>Important Sandwich Technology</title>
 </head>
 
@@ -9,7 +10,7 @@
 </body>
 
 <template name="main">
-	<div class="row">
+	<div class="row header">
 		<h1>Important Sandwich Technology</h1>
 		<h3>Select the sandwich you want for lunch, and make Fred get it for you.</h3>
 	</div>
@@ -26,6 +27,7 @@
 
 		 	<div class="row sandoSelection meatyOption">
 			  <h3>Roast Beef</h3>
+			  <img src="/roastbeefscanwich.png">
 		 	</div>
 
 		 	<div class="row sandoSelection meatyOption">
@@ -70,11 +72,27 @@
 			<div class="row sandoSelection">
 			  <h2>Choose your bread.</h2>
 		 	</div>
+		</div>
 
+		<div class="span8">
 		 	<div class="row sandoSelection">
-			  <h2>Select toppings.</h2>
+			  {{> buildSelection}}
 			</div>
 		</div>
 
 	</div>
+
+	<div class="row">
+
+		<div class="span4">
+			<div class="row sandoSelection">
+			  <h2>Choose your toppings.</h2>
+		 	</div>
+		</div>
+
+	</div>
+</template>
+
+<template name="buildSelection">
+
 </template>
