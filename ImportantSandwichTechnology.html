@@ -3,30 +3,78 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div class="container">
   	{{> main}}
   	</div>
 </body>
 
 <template name="main">
+	<div class="row">
+		<h1>Important Sandwich Technology</h1>
+		<h3>Select the sandwich you want for lunch, and make Fred get it for you.</h3>
+	</div>
   	{{> sandwichDenomination}}
   	{{> sandwichBuilder}}
 </template>
 
 <template name="sandwichDenomination">
-	<div class="row-fluid">
-		<div class="span4 sandoSelection">
-			<h2>MEATY.</h2>
+	<div class="row">
+		<div class="span4">
+			<div class="row sandoSelection">
+			  <h2>MEATY.</h2>
+		 	</div>
+
+		 	<div class="row sandoSelection meatyOption">
+			  <h3>Roast Beef</h3>
+		 	</div>
+
+		 	<div class="row sandoSelection meatyOption">
+			  <h3>BLT</h3>
+		 	</div>
 		</div>
-		<div class="span4 sandoSelection">
-			<h2>Vegetarian</h2>
+
+		<div class="span4">
+			<div class="row sandoSelection">
+			  <h2>Vegetarian</h2>
+			</div>
+
+			<div class="row sandoSelection vegOption">
+			  <h3>Grilled Cheese</h3>
+		 	</div>
+
+		 	<div class="row sandoSelection vegOption">
+			  <h3>Egg Salad</h3>
+		 	</div>
 		</div>
-		<div class="span4 sandoSelection">
-			<h2>Vegan</h2>
+		<div class="span4">
+			<div class="row sandoSelection">
+			  <h2>Vegan</h2>
+			</div>
+
+			<div class="row sandoSelection veganOption">
+			  <h3>Balsamic Portabello</h3>
+		 	</div>
+
+		 	<div class="row sandoSelection veganOption">
+			  <h3>Eggplant</h3>
+		 	</div>
 		</div>
 	</div>
 </template>
 
 <template name="sandwichBuilder">
+	<div class="row">
+		<h2>Or Build Your Own!</h2>
 
+		<div class="span4">
+			<div class="row sandoSelection">
+			  <h2>Choose your bread.</h2>
+		 	</div>
+
+		 	<div class="row sandoSelection">
+			  <h2>Select toppings.</h2>
+			</div>
+		</div>
+
+	</div>
 </template>
