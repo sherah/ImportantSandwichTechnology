@@ -3,11 +3,30 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid">
   	{{> main}}
   	</div>
 </body>
 
 <template name="main">
-  
+  	{{> sandwichDenomination}}
+  	{{> sandwichBuilder}}
+</template>
+
+<template name="sandwichDenomination">
+	<div class="row-fluid">
+		<div class="span4 sandoSelection">
+			<h2>MEATY.</h2>
+		</div>
+		<div class="span4 sandoSelection">
+			<h2>Vegetarian</h2>
+		</div>
+		<div class="span4 sandoSelection">
+			<h2>Vegan</h2>
+		</div>
+	</div>
+</template>
+
+<template name="sandwichBuilder">
+
 </template>
