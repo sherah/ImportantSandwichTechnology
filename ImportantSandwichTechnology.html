@@ -10,28 +10,26 @@
 </body>
 
 <template name="main">
-	<div class="row header">
+	<div class="row-fluid header">
 		<h1>Important Sandwich Technology</h1>
-		<h3>Select the sandwich you want for lunch, and make Fred get it for you.</h3>
+		<h4>Select the sandwich you want for lunch, and make Fred get it for you.</h4>
 	</div>
   	{{> sandwichDenomination}}
-  	{{> sandwichBuilder}}
 </template>
 
 <template name="sandwichDenomination">
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span4">
 			<div class="row sandoSelection">
 			  <h2>MEATY.</h2>
 		 	</div>
 
 		 	<div class="row sandoSelection meatyOption">
-			  <h3>Roast Beef</h3>
-			  <img src="/roastbeefscanwich.png">
+			  <input type="radio" name="sandoChoice" class="choice" value="roast beef"><h3>Roast Beef</h3>
 		 	</div>
 
 		 	<div class="row sandoSelection meatyOption">
-			  <h3>BLT</h3>
+			  <input type="radio" name="sandoChoice" class="choice" value="BLT"><h3>BLT</h3>
 		 	</div>
 		</div>
 
@@ -41,11 +39,11 @@
 			</div>
 
 			<div class="row sandoSelection vegOption">
-			  <h3>Grilled Cheese</h3>
+			  <input type="radio" name="sandoChoice" class="choice" value="Grilled Cheese"><h3>Grilled Cheese</h3>
 		 	</div>
 
 		 	<div class="row sandoSelection vegOption">
-			  <h3>Egg Salad</h3>
+			  <input type="radio" name="sandoChoice" class="choice" value="Egg Salad"><h3>Egg Salad</h3>
 		 	</div>
 		</div>
 		<div class="span4">
@@ -54,14 +52,18 @@
 			</div>
 
 			<div class="row sandoSelection veganOption">
-			  <h3>Balsamic Portabello</h3>
+			  <input type="radio" name="sandoChoice" class="choice" value="Portobello"><h3>Portobello</h3>
 		 	</div>
 
 		 	<div class="row sandoSelection veganOption">
-			  <h3>Eggplant</h3>
+			  <input type="radio" name="sandoChoice" class="choice" value="Eggplant"><h3>Eggplant</h3>
 		 	</div>
+
 		</div>
+		
 	</div>
+
+	{{> submit}}
 </template>
 
 <template name="sandwichBuilder">
@@ -99,10 +101,10 @@
 </template>
 
 <template name="submit">
-	<div class="row">
+	<div class="row-fluid footer">
 		<div class="span3 offset9">
-			{{loginButtons}}
-			<div class="btn btn-large">Fetch my sandwich!</div>
+			{{loginButtons}}<br />
+			<button class="btn btn-large submit" type="submit">Fetch my sandwich!</button>
 		</div>
 	</div>
 </template>
