@@ -40,18 +40,13 @@ if (Meteor.isClient) {
   });
 
   var randomMessage = function(){
-    var pileOfQuotes = ["I believe that if you don't want to do anything, then sit there and don't do it, but don't expect people to hand you a corn beef sandwich and wash your socks for you and unzip your fly for you. ~Shel Silverstein",
+    var pileOfQuotes = ['',"I believe that if you don't want to do anything, then sit there and don't do it, but don't expect people to hand you a corn beef sandwich and wash your socks for you and unzip your fly for you. ~Shel Silverstein",
       "You don't need a pack of wild horses to learn how to make a sandwich. ~Dr. Phil",
-      "another quote",
-      "another quote",
-      "another quote",
-      "another quote",
-      "another quote",
-      "another quote",
-      "another quote",
-      "another quote"
+      "But, you know, it's still a drag to get your picture taken when you're eating a sandwich. It's a downer. ~Keanu Reeves",
+      "I say 20 words in English. I say money, money, money, and I say hot dog! I say yes, no and I say money, money, money and I say turkey sandwich and I say grape juice. ~Carmen Miranda",
+      "Maybe there is no actual place called hell. Maybe hell is just having to listen to our grandparents breathe through their noses when they're eating sandwiches. ~Jim Carrey"
       ];
-    var msg = pileOfQuotes[Math.floor((Math.random()*10)+1)];
+    var msg = pileOfQuotes[Math.floor((Math.random()*5)+1)];
     return msg;
 
   };
