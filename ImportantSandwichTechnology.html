@@ -104,17 +104,15 @@
 <template name="submit">
 	<div class="row-fluid footer">
 		<div class="span4 offset8 subrow">
-			<button class="btn btn-large submit hide" id="submit" type="submit">Fetch my sandwich!</button>
+			<a href='#emailStatus' class="btn btn-large submit hide" id="submit" type="submit" data-toggle="modal">Fetch my sandwich!</a>
 		</div>
 	</div>
-	<div class="row-fluid footerErrors">
-		<div class="emailError hide">
-			<h3>Oops! It looks like your sandwich notification email didn't make it! Please try again.</h3>
-		</div>
-		<div class="radioError hide">
-			<h3>Oops! Select a sandwich before fetching it, silly.</h3>
-		</div>
+
+	<div id="emailStatus" class="modal hide fade">
+		<div class="modal-header"><h2>About your email....</h2></div>
+		<div class="modal-body"></div>
 	</div>
+
 	<div class="row-fluid footer">
 		{{> mochaTestReport}}
 	</div>
