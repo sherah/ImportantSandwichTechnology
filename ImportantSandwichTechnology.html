@@ -14,48 +14,49 @@
 		<h1>Important Sandwich Technology</h1>
 		<h4>Select the sandwich you want for lunch, and make Fred get it for you.</h4>
 	</div>
+	  <div class="login">{{loginButtons}}</div>
   	{{> sandwichDenomination}}
 </template>
 
 <template name="sandwichDenomination">
 	<div class="row-fluid">
 		<div class="span4">
-			<div class="row sandoSelection">
+			<div class="row sandoSelection sandoType" id="meaty">
 			  <h2>MEATY.</h2>
 		 	</div>
 
-		 	<div class="row sandoSelection meatyOption">
+		 	<div class="row sandoSelection meatyOption hide">
 			  <input type="radio" name="sandoChoice" class="choice" value="roast beef"><h3>Roast Beef</h3>
 		 	</div>
 
-		 	<div class="row sandoSelection meatyOption">
+		 	<div class="row sandoSelection meatyOption hide">
 			  <input type="radio" name="sandoChoice" class="choice" value="BLT"><h3>BLT</h3>
 		 	</div>
 		</div>
 
 		<div class="span4">
-			<div class="row sandoSelection">
+			<div class="row sandoSelection sandoType" id="veg">
 			  <h2>Vegetarian</h2>
 			</div>
 
-			<div class="row sandoSelection vegOption">
+			<div class="row sandoSelection vegOption hide">
 			  <input type="radio" name="sandoChoice" class="choice" value="Grilled Cheese"><h3>Grilled Cheese</h3>
 		 	</div>
 
-		 	<div class="row sandoSelection vegOption">
+		 	<div class="row sandoSelection vegOption hide">
 			  <input type="radio" name="sandoChoice" class="choice" value="Egg Salad"><h3>Egg Salad</h3>
 		 	</div>
 		</div>
 		<div class="span4">
-			<div class="row sandoSelection">
+			<div class="row sandoSelection sandoType" id="vegan">
 			  <h2>Vegan</h2>
 			</div>
 
-			<div class="row sandoSelection veganOption">
+			<div class="row sandoSelection veganOption hide">
 			  <input type="radio" name="sandoChoice" class="choice" value="Portobello"><h3>Portobello</h3>
 		 	</div>
 
-		 	<div class="row sandoSelection veganOption">
+		 	<div class="row sandoSelection veganOption hide">
 			  <input type="radio" name="sandoChoice" class="choice" value="Eggplant"><h3>Eggplant</h3>
 		 	</div>
 
@@ -102,9 +103,16 @@
 
 <template name="submit">
 	<div class="row-fluid footer">
-		<div class="span3 offset9">
-			{{loginButtons}}<br />
-			<button class="btn btn-large submit" type="submit">Fetch my sandwich!</button>
+		<div class="span4 offset8 subrow">
+			<button class="btn btn-large submit hide" id="submit" type="submit">Fetch my sandwich!</button>
+		</div>
+	</div>
+	<div class="row-fluid footerErrors">
+		<div class="emailError hide">
+			<h3>Oops! It looks like your sandwich notification email didn't make it! Please try again.</h3>
+		</div>
+		<div class="radioError hide">
+			<h3>Oops! Select a sandwich before fetching it, silly.</h3>
 		</div>
 	</div>
 </template>
