@@ -7,7 +7,8 @@
   "dependencies": {
     "basePackages": {
       "twitter-api": {},
-      "mocha-web": {}
+      "mocha-web": {},
+      "router": {}
     },
     "packages": {
       "twitter-api": {
@@ -19,6 +20,16 @@
         "git": "https://github.com/mad-eye/meteor-mocha-web.git",
         "tag": "v0.0.2",
         "commit": "c534e901f9e5423240ab9c2de121890999d68bbb"
+      },
+      "router": {
+        "git": "https://github.com/tmeasday/meteor-router.git",
+        "tag": "v0.4.2",
+        "commit": "82d2895847502b4025370523dba60d597cff4772"
+      },
+      "page-js-ie-support": {
+        "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
+        "tag": "v1.3.5",
+        "commit": "b99ed8380aefd10b2afc8f18d9eed4dd0d8ea9cb"
       }
     }
   }

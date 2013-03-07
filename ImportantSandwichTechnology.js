@@ -1,6 +1,11 @@
 if (Meteor.isClient) {
   var sandwichOrder = {};
 
+  Meteor.Router.add({
+    '/' : 'main',
+    '/tests' : 'mochaTests'
+  });
+
   Template.main.events({
     //where main template events will go.
   });

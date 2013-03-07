@@ -1,6 +1,7 @@
 {
   "packages": {
     "twitter-api": {},
-    "mocha-web": {}
+    "mocha-web": {},
+    "router": {}
   }
 }
