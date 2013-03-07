@@ -24,6 +24,7 @@ if (Meteor.isClient) {
   Template.sandwichDenomination.events({
     'click .sandoType' :  function(event){
       var sandoType = event.target.parentElement.id;
+      $('.middleCol').hide();
       $('.' + sandoType + 'Option').toggle('show');
     }
   });
@@ -41,24 +42,22 @@ if (Meteor.isClient) {
     'click .submit' : function(event){
       event.preventDefault();
 
-      var specialOptions = [];
+      var specialOptions = "";
 
-      _.each($('input[type=checkbox]'), function(value){
-        if ($('input[type=checkbox]:checked'))
-        {
-          specialOptions.push(value);
-        }
+      _.each($('input[type="checkbox"]:checked'), function(val){
+        specialOptions += ($(val).val()) + "\n";
       });
-      
-      console.log(specialOptions);
-      console.log($('.specialInstructionText').val());
+
+      var specialInstructions = $('.specialInstructionText').val();
 
       var val = $("input:radio[name=sandoChoice]:checked");
       var msg = randomMessage();
-      var message = "Dear Sandwich Person, \n\nPlease send me a " + val[0].value + " sandwich right away!" + "\n\n" + msg + "\n\nLove," + "\nSherah";
+      var message = "Dear Sandwich Person, \n\nPlease send me a " + val[0].value + " sandwich right away!" + "\n\n" + "Also...\n\n" + specialOptions + "\n\n" + "AND...(jeeze sorry)..." + "\n\n" +  specialInstructions + "\n\nThank you! \n\nLove, \nSherah" + "\n\n" + "PS: " + msg;
+
+      console.log(message);
 
       Meteor.call('sendEmail',
-                  'sherah@sherahsmith.com',
+                  'make_sandwich@generalthings.com',
                   'sherah@sherahsmith.com',
                   'This is a sandwich request!',
                   message,
