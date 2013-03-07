@@ -23,8 +23,9 @@ if (Meteor.isClient) {
       event.preventDefault();
       var val = $("input:radio[name=sandoChoice]:checked");
       console.log(val);
-      randomMessage();
-      var message = "Please send me a " + val[0].value + " right away!" + "/nLove," + "/nSherah";
+      var msg = randomMessage();
+      var message = "Dear Sandwich Person, \n\nPlease send me a " + val[0].value + " sandwich right away!" + "\n\n" + msg + "\n\nLove," + "\nSherah";
+      console.log(message);
       Meteor.call('sendEmail', 
                   'she093w48', 
                   'sherah@sherahsmith.com', 
@@ -33,7 +34,20 @@ if (Meteor.isClient) {
   }); 
 
   var randomMessage = function(){
-    console.log("this is a random message");
+    var pileOfQuotes = ["I believe that if you don't want to do anything, then sit there and don't do it, but don't expect people to hand you a corn beef sandwich and wash your socks for you and unzip your fly for you. ~Shel Silverstein",
+      "another quote",
+      "another quote",
+      "another quote",
+      "another quote",
+      "another quote",
+      "another quote",
+      "another quote",
+      "another quote",
+      "another quote"
+      ];
+    var msg = pileOfQuotes[Math.floor((Math.random()*10)+1)];
+    return msg;
+
   };
     
 };
