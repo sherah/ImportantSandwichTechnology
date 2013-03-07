@@ -1,14 +1,26 @@
 if (Meteor.isClient) {
   var sandwichOrder = {
-    type: 'meaty',
-    bread: 'wheat',
-    size: 'large'
+    
+  };
+
+  var photos = {
+    'Roast Beef' : "roastbeef.jpg",
+    'BLT' : "blt.jpg",
+    'Grilled Cheese' : "grilledcheese.jpg",
+    'Egg Salad' : "eggsalad.jpg",
+    'Portobello' : "portobello.jpg",
+    'Eggplant' : "eggplant.jpg"
   };
 
   Meteor.Router.add({
     '/' : 'main',
     '/tests' : 'mochaTests'
   });
+
+  Template.main.timeToSandwich = function(){
+    var time = moment().minute();
+    return time;
+  };
 
   Template.main.events({
     //where main template events will go.
@@ -23,8 +35,9 @@ if (Meteor.isClient) {
 
   Template.sandwichNames.events({
     'click input[type="radio"]' : function(){
+      var sandwichPhoto = '<img src="' + photos[event.srcElement.defaultValue] + '">';
       $('#upcomingOrder').css('display', 'inline');
-      $('#mainSandwich').html(event.srcElement.defaultValue);
+      $('#mainSandwich').html(sandwichPhoto);
       $('#submit').css('display', 'inline');
     }
   });

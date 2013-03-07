@@ -8,15 +8,24 @@ body
 	background-color rgba(255,255,255,0.8)
 	height 90%
 	border-radius 0 0 15px 15px
+	margin-bottom 30px
 
 .header
 	text-align center
 	background-color rgba(255,255,255,0.8)
-	color #000
+	color #6b8e23
 	margin-bottom 20px
+	padding-bottom 15px
 
 h1
 	font-size 400%
+	font-family "Walter Turncoat"
+
+#clock
+	text-align center
+	background url('sandwich.png') no-repeat center
+	height 255px
+	line-height 150%
 
 .sandoSelection, .choiceHeader
 	margin 5px 10px
@@ -30,21 +39,44 @@ h1
 		display inline
 		margin-left 10px
 
+.sandoSelection:hover
+		background-color #ddd
+
 .hide 
 	display none
 
 input[type='checkbox']
 	margin-bottom 10px
 
+.main 
+	background-color rgba(255,255,255,0.5)
+	padding-bottom 30px
+
+#mainSandwich
+	margin-bottom 20px
+
 .login
 	margin 15px
+
+label, input, button, select, textarea
+	font-size 20px
 
 .footer
 	padding 30px 0
 	margin-bottom 30px
 
+.fred
+	padding 40px
+
 .subrow
 	text-align center
+
+.sandoNames 
+	.sandoSelection
+		text-align left
+
+.specialInstructions
+	margin 30px 0 0 20px
 
 .tests
 	background-color #fff
@@ -52,4 +84,10 @@ input[type='checkbox']
 
 #upcomingOrder
 	display none
+
+#time
+	font-size 300%
+	text-align bottom
+	padding-top 60px
+	line-height 100%
 
