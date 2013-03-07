@@ -1,5 +1,9 @@
 if (Meteor.isClient) {
-  var sandwichOrder = {};
+  var sandwichOrder = {
+    type: 'meaty',
+    bread: 'wheat',
+    size: 'large'
+  };
 
   Meteor.Router.add({
     '/' : 'main',
@@ -14,9 +18,13 @@ if (Meteor.isClient) {
     'click .sandoType' :  function(event){
       var sandoType = event.target.parentElement.id;
       $('.' + sandoType + 'Option').toggle('show');
-    },
+    }
+  });
 
+  Template.sandwichNames.events({
     'click input[type="radio"]' : function(){
+      $('#upcomingOrder').css('display', 'inline');
+      $('#mainSandwich').html(event.srcElement.defaultValue);
       $('#submit').css('display', 'inline');
     }
   });
@@ -24,11 +32,11 @@ if (Meteor.isClient) {
   Template.submit.events({
     'click .submit' : function(event){
       event.preventDefault();
+
       var val = $("input:radio[name=sandoChoice]:checked");
-      console.log(val);
       var msg = randomMessage();
       var message = "Dear Sandwich Person, \n\nPlease send me a " + val[0].value + " sandwich right away!" + "\n\n" + msg + "\n\nLove," + "\nSherah";
-      console.log(message);
+
       Meteor.call('sendEmail',
                   'sherah@sherahsmith.com',
                   'sherah@sherahsmith.com',
@@ -40,8 +48,9 @@ if (Meteor.isClient) {
                     } else {
                       $('#emailStatus .modal-body').text("Your sandwich order has been emailed to Fred. He thanks you.");
                     }
-                  });
-      }
+                  }
+      );
+    }
   });
 
   var randomMessage = function(){
