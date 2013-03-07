@@ -13,10 +13,11 @@
 			<h1>Important Sandwich Technology.</h1>
 		</div>
 		<div class="row-fluid clockRow">
-			<div class="span4 offset2">
-				{{> sandwichClock}}
+			<div class="span3 offset2">
+				<img src="sandwich.png">
 			</div>
-			<div class="span4">
+			<div class="span6">
+				{{> sandwichClock}}
 				<div class="row">
 			    <h3 class="fred">Select the sandwich you want for lunch, and make Fred get it for you!</h3>
 				</div>
@@ -107,22 +108,22 @@
 			<h3>3. Get specific about this sandwich.</h3>
 		</div>
 
-		<div class="row-fluid">
+		<div class="row-fluid xtraBox">
 			<label class="checkbox">
-	      <input type="checkbox"> Add pickles
+	      <input type="checkbox" class="xtras"> Add pickles
 	    </label>
 	    <label class="checkbox">
-	      <input type="checkbox"> Cut it down the middle, please
+	      <input type="checkbox" class="xtras"> Cut it down the middle, please
 	    </label>
 	    <label class="checkbox">
-	      <input type="checkbox"> Toast it
+	      <input type="checkbox" class="xtras"> Toast it
 	    </label>
 	    <label class="checkbox">
-	      <input type="checkbox"> I'll have half
+	      <input type="checkbox" class="xtras"> I'll have half
 	    </label>
 	    <div class="specialInstructions">
 		    <label class="textarea">Special Instructions:</label>
-		    <textarea cols="8" rows="5"></textarea>
+		    <textarea cols="8" rows="5" class="specialInstructionText"></textarea>
 		  </div>
 		</div>
 	</div>
@@ -155,8 +156,7 @@
 </template>
 
 <template name="sandwichClock">
-	<div id="clock">
-		<div id="time">{{timeToSandwich}}3 hours 42 minutes</div>
-		<h2>until Lunch Time!</h2>
-	</div>
+		<div class="row">
+			<h2>Lunch starts {{timeToSandwich}}!</h2>
+		</div>
 </template>

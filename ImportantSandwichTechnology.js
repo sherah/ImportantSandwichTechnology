@@ -1,7 +1,4 @@
 if (Meteor.isClient) {
-  var sandwichOrder = {
-    
-  };
 
   var photos = {
     'Roast Beef' : "roastbeef.jpg",
@@ -17,14 +14,12 @@ if (Meteor.isClient) {
     '/tests' : 'mochaTests'
   });
 
-  Template.main.timeToSandwich = function(){
-    var time = moment().minute();
-    return time;
+  Template.sandwichClock.timeToSandwich = function(){
+    var start = moment();
+    var end = moment().startOf('day') + 12;
+    var difference = start.from(end);
+    return difference;
   };
-
-  Template.main.events({
-    //where main template events will go.
-  });
 
   Template.sandwichDenomination.events({
     'click .sandoType' :  function(event){
@@ -45,6 +40,18 @@ if (Meteor.isClient) {
   Template.submit.events({
     'click .submit' : function(event){
       event.preventDefault();
+
+      var specialOptions = [];
+
+      _.each($('input[type=checkbox]'), function(value){
+        if ($('input[type=checkbox]:checked'))
+        {
+          specialOptions.push(value);
+        }
+      });
+      
+      console.log(specialOptions);
+      console.log($('.specialInstructionText').val());
 
       var val = $("input:radio[name=sandoChoice]:checked");
       var msg = randomMessage();
